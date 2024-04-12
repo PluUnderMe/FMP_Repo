@@ -46,17 +46,17 @@ SpeedTreeImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Fronds_2_LOD1
-    second: {fileID: 2100000, guid: e183610e060210e44ac38d34e83c54d1, type: 2}
+    second: {fileID: 2100000, guid: bf8eae4067580c04ca7415d7bc0d73e2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Leaves_3_LOD0
-    second: {fileID: 2100000, guid: 2bcb00d145ec17e4cad096cedfd84138, type: 2}
+    second: {fileID: 2100000, guid: f27a51d20443bd240b07549b71cec27e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Leaves_3_LOD1
-    second: {fileID: 2100000, guid: e6751882f7503bd4f9c6c3902e8b6188, type: 2}
+    second: {fileID: 2100000, guid: 154ce21d1b5c17b4a8d70d093bedba42, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -69,7 +69,7 @@ SpeedTreeImporter:
   bestWindQuality: 4
   hasBillboard: 1
   lODSettings:
-  - height: 0.5
+  - height: 0.6972033
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
@@ -78,7 +78,7 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 0
     windQuality: 4
-  - height: 0.25
+  - height: 0.44645253
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
@@ -87,7 +87,7 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 0
     windQuality: 4
-  - height: 0.125
+  - height: 0.19988163
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1

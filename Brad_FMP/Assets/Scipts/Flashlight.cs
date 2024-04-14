@@ -5,12 +5,15 @@ using TMPro;
 
 public class Flashlight : MonoBehaviour
 {
+    public FearBar fearBar; // Reference to the FearBar script
+
     public Light light;
     public TMP_Text text;
 
     public TMP_Text batteryText;
 
-    public float lifetime = 100;
+    public float decreaseRate = 1f; // Rate at which the flashlight consumes battery
+    public float lifetime = 100f; // Lifetime of the flashlight in seconds
 
     public float batteries = 0;
 
@@ -20,6 +23,7 @@ public class Flashlight : MonoBehaviour
     private bool on;
     private bool off;
 
+    public bool isOn = false; // Track the state of the flashlight
 
     void Start()
     {
@@ -27,6 +31,9 @@ public class Flashlight : MonoBehaviour
 
         off = true;
         light.enabled = false;
+
+        // Get the FearBar component attached to this GameObject
+        fearBar = GetComponent<FearBar>();
 
     }
 
@@ -37,25 +44,16 @@ public class Flashlight : MonoBehaviour
         text.text = lifetime.ToString("0") + "%";
         batteryText.text = batteries.ToString();
 
-        if (Input.GetButtonDown("Flashlight") && off)
+        // Check flashlight input and toggle state
+        if (Input.GetButtonDown("Flashlight"))
         {
-            flashON.Play();
-            light.enabled = true;
-            on = true;
-            off = false;
+            ToggleFlashlight();
         }
 
-        else if (Input.GetButtonDown("Flashlight") && on)
+        if (isOn)
         {
-            flashOFF.Play();
-            light.enabled = false;
-            on = false;
-            off = true;
-        }
-
-        if (on)
-        {
-            lifetime -= 1 * Time.deltaTime;
+            lifetime -= decreaseRate * Time.deltaTime;
+            lifetime = Mathf.Max(lifetime, 0f); // Ensure the lifetime doesn't go below 0
         }
 
         if (lifetime <= 0)
@@ -85,6 +83,29 @@ public class Flashlight : MonoBehaviour
         if (batteries <= 0)
         {
             batteries = 0;
+        }
+
+        void ToggleFlashlight()
+        {
+            // Toggle flashlight state
+            isOn = !isOn;
+
+            // Turn flashlight on/off based on state
+            if (isOn)
+            {
+                light.enabled = true;
+                flashON.Play();
+                // Decrease the FearBar's value while flashlight is on
+                fearBar.increaseRate = -0.5f; // Decrease rate
+            }
+            else
+            {
+                light.enabled = false;
+                flashOFF.Play();
+                // Set FearBar's increase rate back to its default value
+                fearBar.increaseRate = 0.5f; // Default increase rate
+            }
+
         }
     }
 }

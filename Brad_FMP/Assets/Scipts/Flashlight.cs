@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
     public FearBar fearBar; // Reference to the FearBar script
 
     public Light light;
-    public TMP_Text text;
+    public TMP_Text lifetimeText;
 
     public TMP_Text batteryText;
 
@@ -41,7 +41,7 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-        text.text = lifetime.ToString("0") + "%";
+        lifetimeText.text = lifetime.ToString("0") + "%";
         batteryText.text = batteries.ToString();
 
         // Check flashlight input and toggle state

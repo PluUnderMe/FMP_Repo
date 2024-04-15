@@ -1,0 +1,28 @@
+How to change colors:
+1.Select material 'Battery mat'.
+2.Search for 'Secondary maps' parameters.
+3.Change 'Offset' parameter to change colors.
+
+So,type this numbers in X and Y 'offset' parameter to get next colors:
+			|X|Pos.		|Y|Pos.
+Cyan			 0		 0
+Blue			0.25		 0
+Dark green		0.50		 0
+Green			0.75		 0
+Dark blue		0		0.25
+Dark violet		0.25		0.25
+Dark lime		0.50		0.25
+Lime			0.75		0.25
+Dark grey		0		0.50
+Yellow			0.25		0.50
+Red			0.50		0.50
+Orange			0.75		0.50
+Grey			0		0.75
+White			0.25		0.75
+Pink			0.50		0.75
+Dark orange		0.75		0.75
+
+Also,you have emission texture map in 'Emission' channel with black color by default.You can play with this palette for more customization.
+Last tip,you can replace 'emission map' for 'albedo map' this give you interesting effect.
+
+

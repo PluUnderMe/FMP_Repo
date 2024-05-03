@@ -8,19 +8,19 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Pine_trunk_10 nowind
-  m_Shader: {fileID: 4800000, guid: 88e05d1d051dbe14da3257013071561a, type: 3}
-  m_ShaderKeywords: _DETALUSEUV3_ON _DISABLE_DBUFFER _HEIGHTMAP0 _HEIGHTMAP1 _HEIGHT_BASED_BLEND
-    _MAIN_LAYER_INFLUENCE_MODE _MASKMAP _MASKMAP0 _MASKMAP1 _NORMALMAP _NORMALMAP0
-    _NORMALMAP1 _NORMALMAP_TANGENT_SPACE _NORMALMAP_TANGENT_SPACE0 _NORMALMAP_TANGENT_SPACE1
+  m_Shader: {fileID: 4800000, guid: 8a95675767cdff4429e1abe2778a1f30, type: 3}
+  m_ShaderKeywords: _DISABLE_DBUFFER _DISABLE_SSR_TRANSPARENT _HEIGHTMAP0 _HEIGHTMAP1
+    _HEIGHT_BASED_BLEND _MAIN_LAYER_INFLUENCE_MODE _MASKMAP _MASKMAP0 _MASKMAP1 _NORMALMAP
+    _NORMALMAP0 _NORMALMAP1 _NORMALMAP_TANGENT_SPACE _NORMALMAP_TANGENT_SPACE0 _NORMALMAP_TANGENT_SPACE1
     _NORMALMAP_TANGENT_SPACE2 _NORMALMAP_TANGENT_SPACE3 _REQUIRE_UV3
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2225
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
-  - DistortionVectors
+  - RayTracingPrepass
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
@@ -104,17 +104,9 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 15deffbd4c0748f40ba532facd199625, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: 19e32c7b54990d84bb8c5a4abd017c94, type: 3}
-        m_Scale: {x: 1, y: 4}
         m_Offset: {x: 0, y: 0}
     - _DetailMap:
         m_Texture: {fileID: 0}
@@ -134,18 +126,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailMap3:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 2800000, guid: 1b9fb2764b3383d4d812ad4acb19181f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMetalicRAOGSmothnessA:
-        m_Texture: {fileID: 2800000, guid: 53e02de35199e7d49a0213e15dd60c9e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: 25cc05e64e8a6b34e928e49e64532aa2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
@@ -197,7 +177,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ddba1b08c457736439b047b61fd2ee94, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -218,10 +198,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MaskMap3:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetalicRAOGSmothnessA:
-        m_Texture: {fileID: 2800000, guid: 9b41551d297b986459a4b683a18e036d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -332,14 +308,19 @@ Material:
         m_Texture: {fileID: 2800000, guid: 15deffbd4c0748f40ba532facd199625, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texcoord:
+    - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texcoord3:
+    - unity_LightmapsInd:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AORemapMax: 1
     - _AORemapMax0: 1
@@ -352,6 +333,7 @@ Material:
     - _AORemapMin2: 0
     - _AORemapMin3: 0
     - _ATDistance: 1
+    - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
@@ -359,7 +341,8 @@ Material:
     - _AlphaCutoffPrepass: 0.5
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _AmbientOcclusionPower: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
     - _BarkAORemapMax: 1
     - _BarkAORemapMin: 0
@@ -369,8 +352,8 @@ Material:
     - _BarkSmoothnessRemapMin: 0
     - _BarkUseUV3: 1
     - _BlendMode: 0
-    - _BumpScale: 1
     - _CoatMask: 0
+    - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -380,7 +363,6 @@ Material:
     - _DetailAlbedoScale1: 1
     - _DetailAlbedoScale2: 1
     - _DetailAlbedoScale3: 1
-    - _DetailNormalMapScale: 1
     - _DetailNormalScale: 0.279
     - _DetailNormalScale0: 1
     - _DetailNormalScale1: 1
@@ -391,7 +373,6 @@ Material:
     - _DetailSmoothnessScale1: 1
     - _DetailSmoothnessScale2: 1
     - _DetailSmoothnessScale3: 1
-    - _DetalUseUV3: 1
     - _DiffusionProfile: 0
     - _DiffusionProfile0: 0
     - _DiffusionProfile1: 0
@@ -419,6 +400,7 @@ Material:
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
     - _Drag: 0.000001
     - _DstBlend: 0
@@ -511,7 +493,6 @@ Material:
     - _Metallic1: 0
     - _Metallic2: 0
     - _Metallic3: 0
-    - _MetallicPower: 1
     - _NormalMapSpace: 0
     - _NormalMapSpace0: 0
     - _NormalMapSpace1: 0
@@ -527,13 +508,16 @@ Material:
     - _OpacityAsDensity1: 0
     - _OpacityAsDensity2: 0
     - _OpacityAsDensity3: 0
+    - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PreRefractionPass: 0
+    - _RayTracing: 0
     - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
@@ -550,7 +534,6 @@ Material:
     - _Smoothness1: 1
     - _Smoothness2: 1
     - _Smoothness3: 1
-    - _SmoothnessPower: 1
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMax0: 1
     - _SmoothnessRemapMax1: 1
@@ -603,13 +586,13 @@ Material:
     - _Thickness2: 1
     - _Thickness3: 1
     - _ThicknessMultiplier: 1
-    - _TouchReactActive: 0
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
     - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
     - _TrunkAORemapMax: 1
     - _TrunkAORemapMin: 0
@@ -640,7 +623,6 @@ Material:
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - __dirty: 1
     m_Colors:
     - _BarkBaseColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
     - _BarkBlendMaskTilingOffset: {r: 1, g: 1, b: 0, a: 0}
@@ -651,7 +633,7 @@ Material:
     - _BaseColor2: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor3: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap0_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset0: {r: 0, g: 0, b: 0, a: 0}
     - _DiffusionProfileAsset1: {r: 0, g: 0, b: 0, a: 0}
     - _DiffusionProfileAsset2: {r: 0, g: 0, b: 0, a: 0}

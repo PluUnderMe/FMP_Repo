@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586653123762833443}
-  m_Mesh: {fileID: 4300000, guid: ddb92bb948f0ac249b245cb2bb91c276, type: 2}
+  m_Mesh: {fileID: 4300000, guid: dcc99c89658992b49b79b792743ec2ee, type: 2}
 --- !u!23 &7932221222225165069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1171316445133688718}
-  - screenRelativeHeight: 0.93
+  - screenRelativeHeight: 1
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 313031277499295309}

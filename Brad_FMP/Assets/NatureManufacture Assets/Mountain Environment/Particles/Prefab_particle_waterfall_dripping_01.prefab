@@ -4801,13 +4801,13 @@ ParticleSystemRenderer:
   m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 1
+  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 000103040209
+  m_VertexStreams: 00010304
   m_Mesh: {fileID: 5447042800814943771, guid: 2f0d3eb37bbad224db491381cfb2b11b, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}

@@ -8,22 +8,32 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_pine_plant_05
-  m_Shader: {fileID: 4800000, guid: a69d5225f8bd70341b4b06cb7b58e430, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _DOUBLESIDED_ON
+  m_Shader: {fileID: 4800000, guid: 7bd9a74c0a3251f429b6131c73340f07, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2475
   stringTagMap:
     MotionVector: User
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - TransparentBackface
   - MOTIONVECTORS
   - TransparentDepthPrepass
   - TransparentDepthPostpass
+  - RayTracingPrepass
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - WIND_SETTINGS_TexGust:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - WIND_SETTINGS_TexNoise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
         m_Texture: {fileID: 2800000, guid: ca93a9b5bb5b62444a883dbf94a6a1ab, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -65,15 +75,24 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - WIND_SETTINGS_FlexNoiseScale: 0
+    - WIND_SETTINGS_GustScale: 0
+    - WIND_SETTINGS_GustSpeed: 0
+    - WIND_SETTINGS_GustWorldScale: 0
+    - WIND_SETTINGS_ShiverNoiseScale: 0
+    - WIND_SETTINGS_Turbulence: 0
     - _AO: 1
     - _AORemapMax: 1
     - _AORemapMin: 0
-    - _AlphaCutoff: 0.55
+    - _AddPrecomputedVelocity: 0
+    - _AlphaCutoff: 0.64
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
     - _BlendMode: 0
-    - _BumpScale: 0.6
+    - _BumpScale: 1
     - _ColorNoiseSpread: 2
     - _CullFarDistance: 20
     - _CullFarStart: 60
@@ -81,24 +100,29 @@ Material:
     - _CullModeForward: 0
     - _Cutoff: 0.64
     - _DISTANCEBLEND: 0
+    - _DepthOffsetEnable: 0
     - _DiffusionProfileHash: 2.6839058
     - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 1
     - _Drag: 0.1
     - _DstBlend: 0
+    - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _HeightDrag: 0
     - _InitialBend: 1
     - _NormalScale: 1
+    - _OpaqueCullMode: 2
+    - _RayTracing: 0
     - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
+    - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _ShiverDirectionality: 0
     - _ShiverDrag: 0
     - _Smooothness: 0.1
-    - _SmoothnessRemapMax: 0.05
+    - _SmoothnessRemapMax: 0.1
     - _SmoothnessRemapMin: 0
-    - _Specular: 0.3
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 8
@@ -111,6 +135,7 @@ Material:
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
     - _Stiffness: 0.93
+    - _SupportDecals: 1
     - _SurfaceType: 0
     - _Thickness: 0.729
     - _TouchReactActive: 0
@@ -119,6 +144,7 @@ Material:
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
     - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
     - _WINDCOLORMIX: 0
@@ -130,12 +156,13 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
+    - WIND_SETTINGS_WorldDirectionAndSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _ColorAdjustment: {r: 1, g: 1, b: 1, a: 0}
     - _DiffusionProfileAsset: {r: 0.0000000018238335, g: 8.720024e-27, b: 0.07043165, a: 1.1969789e-26}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
-    - _DryColor: {r: 1, g: 1, b: 1, a: 0}
+    - _DryColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HealthyColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HealthyColor: {r: 0.8196079, g: 0.8196079, b: 0.8196079, a: 0}
     - _NewNormal: {r: 0, g: 0, b: 0, a: 0}
     - _TilingOffset: {r: 1, g: 1, b: 0, a: 0}
     - _VertexNormalMultiply: {r: 0, g: 0, b: 0, a: 0}

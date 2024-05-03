@@ -62,7 +62,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1851510141159782832}
-  - screenRelativeHeight: 0.05199113
+  - screenRelativeHeight: 0.051034447
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2779468095713480202}
@@ -191,7 +191,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2584213698200470117}
-  m_Mesh: {fileID: 4300000, guid: 4c79c444a227a1948b0fa3125ef152ba, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 52f1772ca97d09a4da6defc51dce1fd9, type: 2}
 --- !u!23 &2779468095713480202
 MeshRenderer:
   m_ObjectHideFlags: 0

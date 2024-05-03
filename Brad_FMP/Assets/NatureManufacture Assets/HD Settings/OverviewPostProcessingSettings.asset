@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 1
@@ -23,49 +22,39 @@ MonoBehaviour:
   focusDistance:
     m_OverrideState: 1
     m_Value: 1
-    min: 0.1
+  focusDistanceMode:
+    m_OverrideState: 0
+    m_Value: 0
   nearFocusStart:
     m_OverrideState: 1
     m_Value: 0
-    min: 0
   nearFocusEnd:
     m_OverrideState: 1
     m_Value: 0
-    min: 0
   farFocusStart:
     m_OverrideState: 1
     m_Value: 30
-    min: 0
   farFocusEnd:
     m_OverrideState: 1
     m_Value: 900000
-    min: 0
   m_NearSampleCount:
     m_OverrideState: 1
-    m_Value: 4
-    min: 3
-    max: 8
+    m_Value: 5
   m_NearMaxBlur:
     m_OverrideState: 1
-    m_Value: 3
-    min: 0
-    max: 8
+    m_Value: 4
   m_FarSampleCount:
     m_OverrideState: 1
-    m_Value: 5
-    min: 3
-    max: 16
+    m_Value: 7
   m_FarMaxBlur:
     m_OverrideState: 1
-    m_Value: 6
-    min: 0
-    max: 16
-  m_HighQualityFiltering:
-    m_OverrideState: 1
-    m_Value: 0
+    m_Value: 8
   m_Resolution:
     m_OverrideState: 1
     m_Value: 2
+  m_HighQualityFiltering:
+    m_OverrideState: 1
+    m_Value: 1
   m_PhysicallyBased:
     m_OverrideState: 1
     m_Value: 0
@@ -82,37 +71,27 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 1
   threshold:
     m_OverrideState: 1
     m_Value: 0.6
-    min: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.295
-    min: 0
-    max: 1
   scatter:
     m_OverrideState: 1
     m_Value: 0.65
-    min: 0
-    max: 1
   tint:
     m_OverrideState: 1
     m_Value: {r: 1, g: 0.98039216, b: 0.8352941, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   anamorphic:
     m_OverrideState: 0
     m_Value: 1
@@ -138,7 +117,6 @@ MonoBehaviour:
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
     m_Value: 1
@@ -148,13 +126,9 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0.05
-    min: 0
-    max: 1
   m_MaxSamples:
     m_OverrideState: 0
     m_Value: 6
-    min: 3
-    max: 24
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,17 +165,12 @@ MonoBehaviour:
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
     m_Value: 4
-    min: -100
-    max: 100
   tint:
     m_OverrideState: 0
     m_Value: 0
-    min: -100
-    max: 100
 --- !u!114 &1277708075008138474
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -215,7 +184,6 @@ MonoBehaviour:
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   lift:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: 0.013812156}
@@ -238,7 +206,6 @@ MonoBehaviour:
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
     m_Value: 1
@@ -248,79 +215,62 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0.5
-    min: 0
-    max: 4
   directLightingStrength:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 1
   radius:
     m_OverrideState: 0
     m_Value: 2
-    min: 0.25
-    max: 5
   spatialBilateralAggressiveness:
     m_OverrideState: 0
     m_Value: 0.15
-    min: 0
-    max: 1
   temporalAccumulation:
     m_OverrideState: 0
     m_Value: 1
   ghostingReduction:
     m_OverrideState: 0
     m_Value: 0.5
-    min: 0
-    max: 1
   blurSharpness:
     m_OverrideState: 0
     m_Value: 0.1
-    min: 0
-    max: 1
   layerMask:
     m_OverrideState: 0
     m_Value:
       serializedVersion: 2
       m_Bits: 4294967295
+  occluderMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
   m_StepCount:
     m_OverrideState: 0
     m_Value: 6
-    min: 2
-    max: 32
   m_FullResolution:
     m_OverrideState: 0
     m_Value: 0
   m_MaximumRadiusInPixels:
     m_OverrideState: 0
-    m_Value: 32
-    min: 16
-    max: 256
+    m_Value: 40
   m_BilateralUpsample:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   m_DirectionCount:
     m_OverrideState: 0
     m_Value: 2
-    min: 1
-    max: 6
   m_RayLength:
     m_OverrideState: 0
     m_Value: 3
-    min: 0
   m_SampleCount:
     m_OverrideState: 0
     m_Value: 2
-    min: 1
-    max: 64
   m_Denoise:
     m_OverrideState: 0
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 0
     m_Value: 0.5
-    min: 0.001
-    max: 1
 --- !u!114 &4181437385747215688
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -334,31 +284,21 @@ MonoBehaviour:
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
     m_Value: -0.46
   contrast:
     m_OverrideState: 1
     m_Value: -1
-    min: -100
-    max: 100
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
   hueShift:
     m_OverrideState: 0
     m_Value: 0
-    min: -180
-    max: 180
   saturation:
     m_OverrideState: 1
     m_Value: 0
-    min: -100
-    max: 100
 --- !u!114 &5505384147737919562
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -372,93 +312,89 @@ MonoBehaviour:
   m_Name: ScreenSpaceReflection
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 1
   enabled:
     m_OverrideState: 1
     m_Value: 1
-  usedAlgorithm:
+  enabledTransparent:
     m_OverrideState: 0
-    m_Value: 0
-  rayTracing:
+    m_Value: 1
+  tracing:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
+  m_MinSmoothness:
+    m_OverrideState: 1
+    m_Value: 0.9
+  m_SmoothnessFadeStart:
+    m_OverrideState: 1
+    m_Value: 0.9
   reflectSky:
     m_OverrideState: 1
     m_Value: 1
+  usedAlgorithm:
+    m_OverrideState: 0
+    m_Value: 0
   depthBufferThickness:
     m_OverrideState: 1
     m_Value: 0.01
-    min: 0
-    max: 1
   screenFadeDistance:
     m_OverrideState: 1
     m_Value: 0.1
-    min: 0
-    max: 1
   accumulationFactor:
     m_OverrideState: 0
     m_Value: 0.75
-    min: 0
-    max: 1
+  m_RayMaxIterations:
+    m_OverrideState: 1
+    m_Value: 32
+  rayMiss:
+    m_OverrideState: 0
+    m_Value: 3
+  lastBounceFallbackHierarchy:
+    m_OverrideState: 0
+    m_Value: 3
+  ambientProbeDimmer:
+    m_OverrideState: 0
+    m_Value: 1
   layerMask:
     m_OverrideState: 0
     m_Value:
       serializedVersion: 2
       m_Bits: 4294967295
-  mode:
-    m_OverrideState: 0
-    m_Value: 2
-  sampleCount:
+  textureLodBias:
     m_OverrideState: 0
     m_Value: 1
-    min: 1
-    max: 32
-  bounceCount:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 31
-  m_MinSmoothness:
-    m_OverrideState: 1
-    m_Value: 0.9
-    min: 0
-    max: 1
-  m_SmoothnessFadeStart:
-    m_OverrideState: 1
-    m_Value: 0.9
-    min: 0
-    max: 1
-  m_RayMaxIterations:
-    m_OverrideState: 1
-    m_Value: 24
   m_RayLength:
     m_OverrideState: 0
     m_Value: 10
-    min: 0.001
   m_ClampValue:
     m_OverrideState: 0
     m_Value: 1
-    min: 0.001
-    max: 10
-  m_UpscaleRadius:
-    m_OverrideState: 0
-    m_Value: 2
-    min: 2
-    max: 6
-  m_FullResolution:
-    m_OverrideState: 0
-    m_Value: 0
   m_Denoise:
     m_OverrideState: 0
     m_Value: 0
   m_DenoiserRadius:
     m_OverrideState: 0
     m_Value: 8
-    min: 1
-    max: 32
+  m_AffectSmoothSurfaces:
+    m_OverrideState: 0
+    m_Value: 0
+  mode:
+    m_OverrideState: 0
+    m_Value: 2
+  m_FullResolution:
+    m_OverrideState: 0
+    m_Value: 0
+  sampleCount:
+    m_OverrideState: 0
+    m_Value: 1
+  bounceCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_RayMaxIterationsRT:
+    m_OverrideState: 0
+    m_Value: 48
 --- !u!114 &6640133647794636954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -472,7 +408,6 @@ MonoBehaviour:
   m_Name: Exposure
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
     m_Value: 1
@@ -578,19 +513,15 @@ MonoBehaviour:
   adaptationSpeedDarkToLight:
     m_OverrideState: 0
     m_Value: 3
-    min: 0.001
   adaptationSpeedLightToDark:
     m_OverrideState: 0
     m_Value: 1
-    min: 0.001
   weightTextureMask:
     m_OverrideState: 0
     m_Value: {fileID: 0}
   histogramPercentages:
     m_OverrideState: 0
     m_Value: {x: 40, y: 90}
-    min: 0
-    max: 100
   histogramUseCurveRemapping:
     m_OverrideState: 0
     m_Value: 0
@@ -615,7 +546,6 @@ MonoBehaviour:
   proceduralSoftness:
     m_OverrideState: 0
     m_Value: 0.5
-    min: 0
 --- !u!114 &8711377374188185572
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -629,34 +559,24 @@ MonoBehaviour:
   m_Name: Vignette
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   mode:
     m_OverrideState: 0
     m_Value: 0
   color:
     m_OverrideState: 0
     m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
     m_Value: 0.25
-    min: 0
-    max: 1
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
-    min: 0.01
-    max: 1
   roundness:
     m_OverrideState: 0
     m_Value: 1
-    min: 0
-    max: 1
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -666,5 +586,3 @@ MonoBehaviour:
   opacity:
     m_OverrideState: 0
     m_Value: 1
-    min: 0
-    max: 1

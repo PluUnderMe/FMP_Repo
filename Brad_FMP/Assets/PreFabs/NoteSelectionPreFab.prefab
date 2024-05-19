@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 6224973908699490245}
   - component: {fileID: 2064095818690585595}
   - component: {fileID: 5594634140566196709}
+  - component: {fileID: 1472018131087595794}
   m_Layer: 0
   m_Name: NoteSelectionPreFab
   m_TagString: Untagged
@@ -411,3 +412,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1472018131087595794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718382085382316987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb77f1cdb00e35246873b5d9fa6bad0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgImage: {fileID: 2064095818690585595}
+  label: {fileID: 7392835526021075908}

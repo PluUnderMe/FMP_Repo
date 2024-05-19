@@ -336,6 +336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flashlight
       objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128624, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4529141486807128625, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -350,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529141486807128625, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.235
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 4529141486807128625, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
       propertyPath: m_LocalRotation.w
@@ -399,6 +403,58 @@ PrefabInstance:
     - target: {fileID: 4529141486807128636, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
       propertyPath: batteryText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128638, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_Intensity
+      value: 627.0754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128638, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_LightUnit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128638, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_LuxAtDistance
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128638, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_InnerSpotPercent
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128638, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_ShadowResolution.m_Level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128638, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_ShadowResolution.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6084906
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_Color.g
+      value: 0.86137134
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_Intensity
+      value: 2649393.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_SpotAngle
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529141486807128639, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8db19ce9609ed347b44bc550c6f5375, type: 3}

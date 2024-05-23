@@ -34,6 +34,6 @@ public class NoteData : MonoBehaviour
 
     public void Display()
     {
-        //Display the note...
+        NotesSystem.Display(note);
     }
 }

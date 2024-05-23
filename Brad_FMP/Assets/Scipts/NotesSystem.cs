@@ -47,6 +47,10 @@ public struct UIElements
 
 public class NotesSystem : MonoBehaviour
 {
+    //changes
+    public static bool GameIsPaused = false;
+    public MonoBehaviour playerController;
+
     #region Data and Actions
     [SerializeField] UIElements UI = new UIElements();
 
@@ -80,7 +84,7 @@ public class NotesSystem : MonoBehaviour
     private int currentPage = 0;
     private bool readSubscript = false;
     private Sprite defaultPageTexture = null;
-    private bool usingNoteSystem;
+    public static bool usingNoteSystem;
     #endregion
 
     #region Unity's Default Methods
@@ -119,9 +123,7 @@ public class NotesSystem : MonoBehaviour
 
     public void Open()
     {
-        UnityEngine.Object.FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        SwitchGameControls(false);
 
         UpdateList();
         UpdateCanvasGroup(true, UI.ListCanvasGroup);
@@ -129,17 +131,31 @@ public class NotesSystem : MonoBehaviour
     }
     public void Close(bool playSFX)
     {
-        UnityEngine.Object.FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
         CloseNote(playSFX);
         UpdateCanvasGroup(false, UI.ListCanvasGroup);
+        SwitchGameControls(true); // Ensure controls are enabled when closing
     }
     
+    private void SwitchGameControls(bool state)
+    {
+        var controller = UnityEngine.Object.FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+        if (controller != null)
+        {
+            controller.enabled = state;
+        }
+
+        Cursor.visible = !state;
+        Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
+        Time.timeScale = state ? 1f : 0f;
+        GameIsPaused = !state;
+    }
+
     private void DisplayNote(Note note)
     {
+
         if (note == null) { return; }
+
+        SwitchGameControls(false);
 
         PlaySound(openNoteSFX);
 
@@ -279,6 +295,10 @@ public class NotesSystem : MonoBehaviour
         currentPage = 0;
         readSubscript = false;
         sources[1].Stop();
+        if (!usingNoteSystem)
+        {
+            SwitchGameControls(true);
+        }
     }
     private void UpdateCanvasGroup(bool state, CanvasGroup canvasGroup)
     {

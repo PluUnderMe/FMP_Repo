@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [Serializable()]
 public struct UIElements
@@ -339,8 +340,28 @@ public class NotesSystem : MonoBehaviour
         if (Notes.ContainsKey(key) == false)
         {
             Notes.Add(key, note);
+
+            // Check if 7 notes have been added
+            if (Notes.Count == 7)
+            {
+                // Call the WinningTheGame function
+                WinningTheGame();
+            }
         }
     }
+
+    private static void WinningTheGame()
+    {
+        // Call the BookPickUp script to allow interaction with the book
+        var bookPickUpScript = FindObjectOfType<BookPickUp>();
+        if (bookPickUpScript != null)
+        {
+            bookPickUpScript.SetCanInteract(true);
+        }
+        Debug.Log("Congratulations! You have won the game!");
+        // Add your winning game logic here
+    }
+
     public static Note GetNote(string key)
     {
         if (Notes.ContainsKey(key))

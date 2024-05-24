@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class FearBar : MonoBehaviour
 {  
@@ -65,5 +66,20 @@ public class FearBar : MonoBehaviour
 
         // Update the slider value to reflect the current fear bar value
         fearBarSlider.value = currentValue;
+
+        // Check if the current value has reached the maximum value
+        if (currentValue >= maxValue)
+        {
+            // Call the function DyingOfFear
+            DyingOfFear();
+        }
+    }
+
+    // New function to be called when the maximum value is reached
+    void DyingOfFear()
+    {
+        SceneManager.LoadScene("DeathScreen");
+        Debug.Log("Dying of Fear...");
+        // Add your dying of fear logic here
     }
 }

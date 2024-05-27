@@ -10,5 +10,6 @@ public class TriggerSFX : MonoBehaviour
         private void OnTriggerEnter(Collider other)
     {
         playSound.Play();
+        Destroy(gameObject);
     }
 }

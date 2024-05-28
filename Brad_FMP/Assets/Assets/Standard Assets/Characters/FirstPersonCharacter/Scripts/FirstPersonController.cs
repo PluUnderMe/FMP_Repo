@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.Audio;
 
 #pragma warning disable 618, 649
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -34,8 +35,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float currentStamina;
         public float staminaDecreaseRate = 10f;
         public float staminaRegenRate = 5f;
+        public KeyCode runKey = KeyCode.LeftShift;
+        public float regenDelay = 4.6f; // Delay before stamina starts regenerating
+
+        public AudioSource exhaustionAudioSource; // Reference to the AudioSource component
+        //public AudioClip exhaustionClip; // Reference to the exhaustion audio clip
 
         private bool isRunning = false;
+        private float regenTimer = 0f; // Timer to track regen delay
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -66,6 +73,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
             currentStamina = maxStamina;
+            regenTimer = regenDelay; // Start with full delay before regeneration
+
+            
         }
 
 
@@ -94,15 +104,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 
             // Stamina management
-            if (currentStamina > 0 && Input.GetKey(KeyCode.LeftShift))
+            if (currentStamina > 0 && Input.GetKey(runKey))
             {
                 isRunning = true;
                 currentStamina -= staminaDecreaseRate * Time.deltaTime;
+                regenTimer = regenDelay; // Reset the timer while running
             }
             else
             {
                 isRunning = false;
-                currentStamina += staminaRegenRate * Time.deltaTime;
+                if (regenTimer <= 0 && currentStamina < maxStamina) // Only regenerate if the timer has reached 0 and stamina is not at maximum
+                {
+                    currentStamina += staminaRegenRate * Time.deltaTime;
+                }
+                else
+                {
+                    regenTimer -= Time.deltaTime; // Countdown the timer
+                }
+
             }
 
             currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
@@ -112,10 +131,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 isRunning = false;
                 m_IsWalking = true; // Set walking to true
+
+
+                // Play the exhaustion sound if not already playing
+                if (!exhaustionAudioSource.isPlaying)
+                {
+                    exhaustionAudioSource.Play();
+                }
             }
             else
             {
                 m_IsWalking = !isRunning; // Allow running only if stamina is not 0
+
+                // Stop the exhaustion sound if the player is not exhausted
+                if (exhaustionAudioSource.isPlaying)
+                {
+                    exhaustionAudioSource.Stop();
+                }
             }
 
         }

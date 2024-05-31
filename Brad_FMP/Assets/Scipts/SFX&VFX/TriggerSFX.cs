@@ -8,6 +8,8 @@ public class TriggerSFX : MonoBehaviour
     public AudioSource playSound;
     private bool hasTriggered = false; // Flag to ensure the trigger can only be activated once
 
+    public FearBar fearBar; // Reference to the FearBar script
+
     private void OnTriggerEnter(Collider other)
     {
         // Check if the trigger has already been activated
@@ -21,8 +23,14 @@ public class TriggerSFX : MonoBehaviour
         {
             hasTriggered = true; // Set the flag to true to prevent re-triggering
 
-            Debug.Log("Tree Falling");
             playSound.Play();
+
+            // Add 10 to the fear bar
+            if (fearBar != null)
+            {
+                fearBar.IncreaseFear(10f);
+            }
+
             // Destroy the GameObject after the clip has finished playing
             Destroy(gameObject, playSound.clip.length);
         }

@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void PlayGame()
+
+    public AudioSource playGameSound;
+
+    public void PlayGame()
     {
+        playGameSound.Play();
         StartCoroutine(LoadNextSceneWithDelay(3f)); // Start the coroutine with a 5-second delay
     }
 

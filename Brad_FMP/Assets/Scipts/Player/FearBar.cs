@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 public class FearBar : MonoBehaviour
-{  
-
+{
     public int maxValue = 100; // Maximum value of the progress bar
-    public float increaseRate = 0.5f; // Rate at which the value increases per second
+    public float increaseRate = 1f; // Rate at which the value increases per second
+    public float decreaseRate = 0.5f; // Rate at which the value decreases per second
 
     private float currentValue = 0f; // Current value of the progress bar
     private Slider fearBarSlider; // Reference to the UI slider
@@ -33,32 +33,15 @@ public class FearBar : MonoBehaviour
 
         // Initialize the value of the slider
         fearBarSlider.value = currentValue;
-
-        // Start increasing the value over time
-        //InvokeRepeating("IncreaseValue", 1f, 1f); // Invoke the method "IncreaseValue" every second
     }
 
-    void IncreaseValue()
-    {
-        // Increase the current value by the specified rate
-        currentValue += increaseRate;
-
-        // Ensure the current value does not exceed the maximum value
-        currentValue = Mathf.Min(currentValue, maxValue);
-
-        // Update the slider value to reflect the current progress
-        fearBarSlider.value = currentValue;
-
-        // Invoke the event to notify subscribers about the fear value change
-        OnFearValueChanged?.Invoke(currentValue);
-    }
     void Update()
     {
         // Check if flashlight is on
         if (flashlight.isOn)
         {
             // Decrease fear bar value while flashlight is on
-            currentValue -= increaseRate * Time.deltaTime;
+            currentValue -= decreaseRate * Time.deltaTime;
             currentValue = Mathf.Max(currentValue, 0f); // Ensure the value doesn't go below 0
         }
         else
@@ -80,21 +63,35 @@ public class FearBar : MonoBehaviour
             // Call the function DyingOfFear
             DyingOfFear();
         }
+
+        // Invoke the event to notify subscribers about the fear value change
+        OnFearValueChanged?.Invoke(currentValue);
     }
 
-     //Function to update the audio mixer's volume based on the fear bar value
+    // Function to update the audio mixer's volume based on the fear bar value
     void UpdateAudioVolume(float value)
     {
-         //Convert the fear value to a decibel value 
-        float volume = Mathf.Lerp(-30f, 18f, value / maxValue);
+        // Convert the fear value to a decibel value 
+        float volume = Mathf.Lerp(-10f, 20f, value / maxValue);
         fearAudioMixer.SetFloat(fearVolumeParameter, volume);
     }
 
-    // New function to be called when the maximum value is reached
+    // Function to be called when the maximum value is reached
     void DyingOfFear()
     {
         SceneManager.LoadScene("DeathScreen");
         Debug.Log("Dying of Fear...");
         // Add your dying of fear logic here
     }
+
+    // Function to increase fear value
+    public void IncreaseFear(float amount)
+    {
+        currentValue += amount;
+        currentValue = Mathf.Min(currentValue, maxValue); // Ensure the value doesn't exceed maxValue
+        fearBarSlider.value = currentValue;
+        OnFearValueChanged?.Invoke(currentValue);
+        UpdateAudioVolume(currentValue);
+    }
+
 }

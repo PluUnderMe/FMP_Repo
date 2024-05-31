@@ -45,6 +45,7 @@ public class BatteryPickUp : MonoBehaviour
         if (Input.GetButtonDown("Interact") && inReach)
         {
             flashlight.GetComponent<Flashlight>().batteries += 1;
+            flashlight.GetComponent<Flashlight>().UpdateBatteryCountImage(); // Update battery count image
             pickUpSound.Play();
             inReach = false;
             pickUpText.SetActive(false);

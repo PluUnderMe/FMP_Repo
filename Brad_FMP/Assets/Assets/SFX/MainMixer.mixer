@@ -9,12 +9,46 @@ AudioMixerGroupController:
   m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 628cfd52185880244b77e18479811b1a
-  m_Children: []
+  m_Children:
+  - {fileID: -4376199427079707745}
   m_Volume: 4b4aa31e29598c14dbd0a4fa9db86910
   m_Pitch: 3611ad53d7a0a4f42a7e9dff6408b94e
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 5890346995025484858}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-6400358086282854020
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 16a411177501ef148b350d96eb6bb9bf
+  m_EffectName: Attenuation
+  m_MixLevel: 454c6c47c99db784e9cbac126d4f50c3
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-4376199427079707745
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BayuMusic
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 423d3f4a3f52a8b41a30482dd7bce763
+  m_Children: []
+  m_Volume: 009e180c7f7260c498d66770d3c1dd3f
+  m_Pitch: 59257cd493e7eb647b8339c9b280a64e
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6400358086282854020}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -67,6 +101,7 @@ AudioMixerController:
     - 8024e739c8c38264c8fb427b18ca8f72
     - 98dbb2aed52e5124f8b6f43fd8375038
     - e34a4dd4fc7dd444fbd834cf59180d8c
+    - 423d3f4a3f52a8b41a30482dd7bce763
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -119,6 +154,8 @@ AudioMixerSnapshotController:
   m_FloatValues:
     068148c1faffa3d4e8af77393f7f85f7: -9.833286
     989c67e234758714385ee6ded41b6af1: 0
+    009e180c7f7260c498d66770d3c1dd3f: -19.928473
+    4b4aa31e29598c14dbd0a4fa9db86910: -0.19117308
   m_TransitionOverrides: {}
 --- !u!243 &380827507656712812
 AudioMixerGroupController:

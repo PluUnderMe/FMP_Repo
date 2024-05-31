@@ -1,0 +1,11 @@
+Model Information:
+* title:	Paper debris v2
+* source:	https://sketchfab.com/3d-models/paper-debris-v2-00e6bacc8029415fb970f03651d5ee2d
+* author:	Sousinho (https://sketchfab.com/sousinho)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Paper debris v2" (https://sketchfab.com/3d-models/paper-debris-v2-00e6bacc8029415fb970f03651d5ee2d) by Sousinho (https://sketchfab.com/sousinho) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

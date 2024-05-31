@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old Torah Scroll
+* source:	https://sketchfab.com/3d-models/old-torah-scroll-89f8a65f65d94ff584343703ed1004e5
+* author:	Santiago Shang (https://sketchfab.com/santiagoshang)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old Torah Scroll" (https://sketchfab.com/3d-models/old-torah-scroll-89f8a65f65d94ff584343703ed1004e5) by Santiago Shang (https://sketchfab.com/santiagoshang) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

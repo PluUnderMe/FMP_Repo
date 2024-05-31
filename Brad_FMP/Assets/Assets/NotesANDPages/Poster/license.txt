@@ -1,0 +1,11 @@
+Model Information:
+* title:	Poster (Basic & Low Poly)
+* source:	https://sketchfab.com/3d-models/poster-basic-low-poly-eecc7216ab704bdf9c7fb1ef33c23889
+* author:	filththemutt (https://sketchfab.com/filththemutt)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Poster (Basic & Low Poly)" (https://sketchfab.com/3d-models/poster-basic-low-poly-eecc7216ab704bdf9c7fb1ef33c23889) by filththemutt (https://sketchfab.com/filththemutt) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

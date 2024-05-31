@@ -1,0 +1,11 @@
+Model Information:
+* title:	Paper
+* source:	https://sketchfab.com/3d-models/paper-a8ed9eeea88842469b5dade54cd8eb6b
+* author:	otiga (https://sketchfab.com/otiga)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Paper" (https://sketchfab.com/3d-models/paper-a8ed9eeea88842469b5dade54cd8eb6b) by otiga (https://sketchfab.com/otiga) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

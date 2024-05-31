@@ -1,0 +1,11 @@
+Model Information:
+* title:	Notebook & Torn Page
+* source:	https://sketchfab.com/3d-models/notebook-torn-page-0ef9886bc96a4c7ba4f6c339c425a206
+* author:	FrodoUndead (https://sketchfab.com/FrodoUndead)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Notebook & Torn Page" (https://sketchfab.com/3d-models/notebook-torn-page-0ef9886bc96a4c7ba4f6c339c425a206) by FrodoUndead (https://sketchfab.com/FrodoUndead) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

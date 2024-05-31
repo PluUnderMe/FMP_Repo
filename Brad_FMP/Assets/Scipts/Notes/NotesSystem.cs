@@ -352,7 +352,7 @@ public class NotesSystem : MonoBehaviour
         }
     }
 
-    private static void WinningTheGame()
+    public static void WinningTheGame()
     {
         // Call the BookPickUp script to allow interaction with the book
         var bookPickUpScript = FindObjectOfType<BookPickUp>();
@@ -362,6 +362,19 @@ public class NotesSystem : MonoBehaviour
         }
         Debug.Log("Congratulations! You have won the game!");
         // Add your winning game logic here
+
+        // Find the CandleView script in the scene and call MakeVisible
+        var candleView = FindObjectOfType<CandleView>();
+        if (candleView != null)
+        {
+            candleView.MakeVisible();
+        }
+        else
+        {
+            Debug.LogError("CandleView script not found!");
+        }
+
+        Debug.Log("Congratulations! You have won the game!");
     }
 
     public static Note GetNote(string key)

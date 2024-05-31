@@ -79,9 +79,9 @@ public class FearBar : MonoBehaviour
     // Function to be called when the maximum value is reached
     void DyingOfFear()
     {
-        SceneManager.LoadScene("DeathScreen");
-        Debug.Log("Dying of Fear...");
-        // Add your dying of fear logic here
+        SceneManager.LoadScene("Death");
+        //Debug.Log("Dying of Fear...");
+        
     }
 
     // Function to increase fear value

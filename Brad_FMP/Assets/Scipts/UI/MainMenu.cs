@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void ShowCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     private IEnumerator LoadNextSceneWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay

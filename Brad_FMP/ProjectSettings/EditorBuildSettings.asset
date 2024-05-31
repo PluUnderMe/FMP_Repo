@@ -9,7 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: e16dec7ade35ae347b3deccf637e7f66
   - enabled: 1
-    path: Assets/Scenes/Environment.unity
+    path: Assets/Scenes/Intro.unity
+    guid: efef563354e48644ca8bfe696735408f
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
     guid: 55d800112e1feff4c9f50b35407ff4d2
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: 67f8f1c82666f424c8d62a5cc255e384
+  - enabled: 1
+    path: Assets/Scenes/Death Finished.unity
+    guid: 46653374dac0a6942bb389024a2a96ec
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 4ae2b3f8f9434f643973b3be70f31d6c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 59e96bea790ed3240841e3203323b6f8, type: 2}

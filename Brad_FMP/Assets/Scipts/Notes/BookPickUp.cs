@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BookPickUp : MonoBehaviour
 {
@@ -72,5 +74,6 @@ public class BookPickUp : MonoBehaviour
         pickUpText.SetActive(false);
         bookObject.SetActive(false);
         // Additional logic for what happens when the book is picked up
+        SceneManager.LoadScene("Death Finished");
     }
 }

@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a0bb2d5e9ca14a804615257255cb9, type: 3}
   m_Name: JournalPage1
   m_EditorClassIdentifier: 
-  type: 0
-  text: 
+  type: 1
+  text: "Back \nto the path I head, even though it feels like it\u2019s disappearing
+    behind me. I don\u2019t want to get lost in here but the trees are so dense and
+    the air is thick with unease. The deeper I venture, each step, I take I can hear
+    footsteps echoing behind me. But every time I turn around, no one is there. Am
+    I being followed? By what? There\u2019s no one here. Something isn\u2019t right
+    here. \r"
   texture: {fileID: 21300000, guid: 4a35e73b477e5ae45aff0950d9ea71cc, type: 3}
   useSubscript: 1
   displayLines: 0

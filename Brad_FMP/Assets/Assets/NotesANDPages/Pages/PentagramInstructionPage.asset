@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a0bb2d5e9ca14a804615257255cb9, type: 3}
   m_Name: PentagramInstructionPage
   m_EditorClassIdentifier: 
-  type: 0
-  text: 
+  type: 1
+  text: 'A
+
+    presence is lurking in this forest with me, I can feel it. Cold shivers
+    are running down my spine with every step I take. The screams I hear are chilling.
+    I can''t shake the feeling of being watched, But with each hurried step, this
+    paranoia only grows stronger.
+
+
+    (Written on what appears to be how to make
+    a pentagram that can summon a great evil)'
   texture: {fileID: 21300000, guid: 9d001eb6d56b5634b975c48e27e426cf, type: 3}
   useSubscript: 1
   displayLines: 0

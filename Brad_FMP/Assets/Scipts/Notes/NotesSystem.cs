@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 [Serializable()]
 public struct UIElements
 {
+    // Serialized fields to hold references to various UI elements
     [SerializeField] TextMeshProUGUI textObj;
     public TextMeshProUGUI TextObj { get { return textObj; } }
 
@@ -48,22 +49,26 @@ public struct UIElements
 
 public class NotesSystem : MonoBehaviour
 {
-    //changes
+    // Static flag to check if the game is paused
     public static bool GameIsPaused = false;
+    // Reference to the player controller
     public MonoBehaviour playerController;
 
     #region Data and Actions
+    // UI elements and colors for alternating note backgrounds
     [SerializeField] UIElements UI = new UIElements();
-
     [SerializeField] Color color1 = Color.gray;
     [SerializeField] Color color2 = Color.gray;
 
+    // Dictionary to store notes and a list to store note data prefabs
     private static Dictionary<String, Note> Notes = new Dictionary<string, Note>();
     private List<NoteData> noteDatas = new List<NoteData>();
+    // Action to display a note
     private static Action<Note> A_Display = delegate { };
     #endregion
 
     #region Audio
+    // Audio sources for various sound effects
     [SerializeField] private AudioSource[] sources = null;
     [Space]
     [SerializeField] public AudioSource pickUPNoteSFX = null;
@@ -75,11 +80,11 @@ public class NotesSystem : MonoBehaviour
     #endregion
 
     #region Properties and Private
-
+    // Private variables for active note, current page, and other states
     private Note activeNote = null;
     private Page ActivePage
     {
-        get 
+        get
         {
             return activeNote.Pages[currentPage];
         }
@@ -91,7 +96,7 @@ public class NotesSystem : MonoBehaviour
     #endregion
 
     #region Unity's Default Methods
-
+    // Subscribe to the display action on enable and unsubscribe on disable
     private void OnEnable()
     {
         A_Display += DisplayNote;
@@ -100,11 +105,13 @@ public class NotesSystem : MonoBehaviour
     {
         A_Display -= DisplayNote;
     }
+    // Initialize by closing the UI and storing the default page texture
     private void Start()
     {
         Close(false);
         defaultPageTexture = UI.Page.sprite;
     }
+    // Update method to toggle the note system with the Tab key
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -121,24 +128,28 @@ public class NotesSystem : MonoBehaviour
             }
         }
     }
-
     #endregion
 
+    // Method to open the note system and update the list UI
     public void Open()
     {
         SwitchGameControls(false);
         openNoteSFX.Play();
         UpdateList();
         UpdateCanvasGroup(true, UI.ListCanvasGroup);
-
     }
+    // Method to close the note system and optionally play a sound effect
     public void Close(bool playSFX)
     {
-        closeNoteSFX.Play();
+        if (playSFX)
+        {
+            closeNoteSFX.Play();
+        }
         UpdateCanvasGroup(false, UI.ListCanvasGroup);
         SwitchGameControls(true); // Ensure controls are enabled when closing
     }
-    
+
+    // Method to switch game controls and cursor visibility/state
     private void SwitchGameControls(bool state)
     {
         var controller = UnityEngine.Object.FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
@@ -153,26 +164,34 @@ public class NotesSystem : MonoBehaviour
         GameIsPaused = !state;
     }
 
+    // Method to display a note
     private void DisplayNote(Note note)
     {
-
         if (note == null) { return; }
 
         SwitchGameControls(false);
-
         pickUPNoteSFX.Play();
-
         UpdateCanvasGroup(true, UI.NoteCanvasGroup);
         activeNote = note;
-
         DisplayPage(0);
     }
+
+    // Method to display a specific page of the active note
     private void DisplayPage(int page)
     {
         UI.ReadButton.interactable = activeNote.Pages[page].Type == PageType.Texture;
 
         if (activeNote.Pages[page].Type != PageType.Texture)
-        { readSubscript = false; } else { if (readSubscript) { UpdateSubscript(); } }
+        {
+            readSubscript = false;
+        }
+        else
+        {
+            if (readSubscript)
+            {
+                UpdateSubscript();
+            }
+        }
 
         sources[1].Stop();
         if (activeNote.Pages[page].Narration != null)
@@ -185,7 +204,6 @@ public class NotesSystem : MonoBehaviour
                 {
                     activeNote.Pages[page].NarrationPlayed = true;
                 }
-
             }
         }
 
@@ -203,27 +221,31 @@ public class NotesSystem : MonoBehaviour
         UpdateUI();
     }
 
+    // Static method to display a note by passing a Note object
     public static void Display(Note note)
     {
         A_Display(note);
     }
+
+    // Static method to display a note by passing a key to fetch the Note object
     public static void Display(string key)
     {
         var note = GetNote(key);
         A_Display(note);
     }
 
-    public  void CloseNote(bool playSFX)
+    // Method to close the active note and optionally play a sound effect
+    public void CloseNote(bool playSFX)
     {
         if (playSFX)
         {
             closeNoteSFX.Play();
         }
-
         UpdateCanvasGroup(false, UI.NoteCanvasGroup);
         OnNoteClose();
     }
 
+    // Method to update the UI elements based on the current page
     private void UpdateUI()
     {
         UI.PreviousButton.interactable = !(currentPage == 0);
@@ -235,6 +257,8 @@ public class NotesSystem : MonoBehaviour
 
         UI.Lines.enabled = ActivePage.DisplayLines;
     }
+
+    // Method to update the list of notes in the UI
     private void UpdateList()
     {
         ClearList();
@@ -249,7 +273,6 @@ public class NotesSystem : MonoBehaviour
             noteDatas.Add(newNotePrefab);
 
             newNotePrefab.UpdateInfo(note.Value, color);
-
             newNotePrefab.Rect.anchoredPosition = new Vector2(0, height);
             height -= newNotePrefab.Rect.sizeDelta.y;
 
@@ -258,32 +281,38 @@ public class NotesSystem : MonoBehaviour
             index++;
         }
     }
+
+    // Method to update the subscript text based on the current page
     private void UpdateSubscript()
     {
         UI.Subscript.text = readSubscript ? ActivePage.Text : string.Empty;
     }
 
-
+    // Method to display the next page of the note
     public void Next()
     {
         nextPageSFX.Play();
         currentPage++;
         DisplayPage(currentPage);
     }
+
+    // Method to display the previous page of the note
     public void Previous()
     {
         previousPageSFX.Play();
         currentPage--;
         DisplayPage(currentPage);
     }
+
+    // Method to toggle reading the subscript
     public void Read()
     {
         readSubscript = !readSubscript;
-
         UpdateSubscript();
         UpdateUI();
     }
 
+    // Method to clear the list of note data prefabs
     private void ClearList()
     {
         foreach (var note in noteDatas)
@@ -292,6 +321,8 @@ public class NotesSystem : MonoBehaviour
         }
         noteDatas.Clear();
     }
+
+    // Method to reset variables when a note is closed
     private void OnNoteClose()
     {
         activeNote = null;
@@ -303,6 +334,8 @@ public class NotesSystem : MonoBehaviour
             SwitchGameControls(true);
         }
     }
+
+    // Method to update the visibility and interactivity of a canvas group
     private void UpdateCanvasGroup(bool state, CanvasGroup canvasGroup)
     {
         switch (state)
@@ -317,10 +350,10 @@ public class NotesSystem : MonoBehaviour
                 canvasGroup.blocksRaycasts = false;
                 canvasGroup.interactable = false;
                 break;
-
         }
     }
 
+    // Method to play a single sound clip
     private void PlaySound(AudioClip clip)
     {
         if (clip)
@@ -328,6 +361,8 @@ public class NotesSystem : MonoBehaviour
             sources[0].PlayOneShot(clip);
         }
     }
+
+    // Method to play a random sound clip from an array
     private void PlaySound(AudioClip[] clips)
     {
         if (clips != null)
@@ -337,9 +372,10 @@ public class NotesSystem : MonoBehaviour
         }
     }
 
+    // Static method to add a note to the dictionary and check for winning condition
     public static void AddNote(string key, Note note)
     {
-        if (Notes.ContainsKey(key) == false)
+        if (!Notes.ContainsKey(key))
         {
             Notes.Add(key, note);
 
@@ -352,18 +388,18 @@ public class NotesSystem : MonoBehaviour
         }
     }
 
+    // Static method to handle winning the game
     public static void WinningTheGame()
     {
-        // Call the BookPickUp script to allow interaction with the book
+        // Enable interaction with the book
         var bookPickUpScript = FindObjectOfType<BookPickUp>();
         if (bookPickUpScript != null)
         {
             bookPickUpScript.SetCanInteract(true);
         }
         Debug.Log("Congratulations! You have won the game!");
-        // Add your winning game logic here
 
-        // Find the CandleView script in the scene and call MakeVisible
+        // Find and make the candle view visible
         var candleView = FindObjectOfType<CandleView>();
         if (candleView != null)
         {
@@ -373,10 +409,9 @@ public class NotesSystem : MonoBehaviour
         {
             Debug.LogError("CandleView script not found!");
         }
-
-        Debug.Log("Congratulations! You have won the game!");
     }
 
+    // Static method to get a note by its key
     public static Note GetNote(string key)
     {
         if (Notes.ContainsKey(key))

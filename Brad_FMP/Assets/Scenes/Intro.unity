@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 393.71735, g: 394.00946, b: 436.146, a: 1}
+  m_IndirectSpecularColor: {r: 393.71735, g: 394.00916, b: 436.14502, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1840,7 +1840,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Words
+  m_text: '666 Farewell Forest
+
+    A long list of disturbances and disappearances
+    have left the locals frightened, Ive made my way here and managed to get a radio
+    working requesting backup. warning to anyone who comes this forest plays tricks
+    on your mind, makes you see and hear things dont trust anything just stay calm.
+    losing yourself to fear out here could spell the end. ive found some supplies
+    around and left notes and evidence as well. make sure to try collect it all i
+    think i left 7 or 8 in total. Hurry!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4045653f9243a174f8f354d7b8d6b4a4, type: 2}
   m_sharedMaterial: {fileID: -5326691799763371525, guid: 4045653f9243a174f8f354d7b8d6b4a4, type: 2}

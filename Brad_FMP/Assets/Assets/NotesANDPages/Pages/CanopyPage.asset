@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a0bb2d5e9ca14a804615257255cb9, type: 3}
   m_Name: CanopyPage
   m_EditorClassIdentifier: 
-  type: 0
-  text: 
+  type: 1
+  text: 'Place-ing
+
+    all my trust in this dim torch we get provided with doesnt
+    seem like a great idea but with not much to go on or any signs of getting closer
+    to the disturbances I feel I must press on. Im starting to feel tingly though
+    is it something in the air? whatever it i have to put that to my side.'
   texture: {fileID: 21300000, guid: 4a35e73b477e5ae45aff0950d9ea71cc, type: 3}
   useSubscript: 1
   displayLines: 0

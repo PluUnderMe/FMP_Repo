@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a0bb2d5e9ca14a804615257255cb9, type: 3}
   m_Name: CalssifiedDocPage
   m_EditorClassIdentifier: 
-  type: 0
-  text: 
+  type: 1
+  text: "(AClassified document what was he investigating here, he's written some
+    thing on the back)\n\n\u201CTurn Around\u201D\nis being whispered to me in the
+    wind, I swear. This place has the strangest vibes. there are signs of people
+    living here but no one\u2019s about. I wish there was someone I could ask questions,
+    to see if the rumours are true. but perhaps it\u2019s a good sign that no one
+    is around. Maybe there is nothing really happening here and it's all a big hoax.
+    Still, it has the locals shook even got the police to look into it they always
+    came up empty though, worth checking out to be sure. \n\n\n"
   texture: {fileID: 21300000, guid: 2521e771f4536a1498c95f4eec38587a, type: 3}
   useSubscript: 1
   displayLines: 0

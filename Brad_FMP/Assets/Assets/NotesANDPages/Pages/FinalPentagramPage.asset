@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a0bb2d5e9ca14a804615257255cb9, type: 3}
   m_Name: FinalPentagramPage
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   text: 
   texture: {fileID: 21300000, guid: 3bf3ef54aec1a2741b6950dbf7509631, type: 3}
   useSubscript: 1

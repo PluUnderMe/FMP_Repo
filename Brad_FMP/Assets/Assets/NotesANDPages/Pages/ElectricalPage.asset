@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a0bb2d5e9ca14a804615257255cb9, type: 3}
   m_Name: ElectricalPage
   m_EditorClassIdentifier: 
-  type: 0
-  text: 
+  type: 1
+  text: "This \nlooks like it used to be a working power station. What was it used
+    for though? Nothing I\u2019ve come across needs this kind of power. A lot of
+    things in this forest aren\u2019t making sense. I feel lost. Im starting to forget
+    the reason im out here. Something is calling me forward like a sweet lullabuy. "
   texture: {fileID: 21300000, guid: 4a35e73b477e5ae45aff0950d9ea71cc, type: 3}
   useSubscript: 1
   displayLines: 0

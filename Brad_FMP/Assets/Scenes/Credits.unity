@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 393.48773, g: 394.13446, b: 437.62183, a: 1}
+  m_IndirectSpecularColor: {r: 393.69513, g: 393.94794, b: 435.92578, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2395,10 +2395,10 @@ MonoBehaviour:
     [Free] by Heathen Engineering \r\nWooden Canopy by ice_screen\r\n\r\nSketchfab\r\nDemon
     Scroll by Sousinho\r\nNotebook & torn Page by FrodoUndead\r\nPaper debris by
     Sousinho\r\nPaper debris v2 by Sousinho\r\n\r\nDaFont\r\nBonechiller by Alpaprana
-    Studio\r\nSilent Phobia by Khurasan\r\n\r\nMajor Tutorial Help\r\nNotes System
-    by WatchFindDo Media\r\nHow To Make A Horror Game Unity by User1 Productions\r\nAnything
-    and Everything Brackeys \r\n\r\nWith Special Thanks To\r\nAlan Stewart \r\nEmily
-    Kelly\r\n\r\nXylophobia\r\n\n\n\n\n"
+    Studio\r\nSilent Phobia by Khurasan\r\n\nSFX\r\nSoundSnap\r\n\nMajor Tutorial
+    Help\r\nNotes System by WatchFindDo Media\r\nHow To Make A Horror Game Unity
+    by User1 Productions\r\nAnything and Everything Brackeys \r\n\r\nWith Special
+    Thanks To\r\nAlan Stewart \r\nEmily Kelly\r\n\r\nXylophobia\r\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f36bbbeab8741d845b0d3897f9410db4, type: 2}
   m_sharedMaterial: {fileID: -4224094443001615165, guid: f36bbbeab8741d845b0d3897f9410db4, type: 2}
